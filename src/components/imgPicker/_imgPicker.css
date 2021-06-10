@@ -1,0 +1,68 @@
+.drawContent {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.imgLayout {
+	height: 95%;
+	display: flex;
+	flex-direction: column;
+}
+
+.imgList {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	height: 95%;
+}
+
+.pageLayout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1
+}
+
+.imgItem {
+	margin-right: 15px;
+	height: 180px;
+	width: 170px;
+	margin-top: 20px;
+	position: relative;
+	cursor: pointer;
+}
+.imgItem:hover .imgItemHover {
+	opacity: 1;
+}
+.imgItemHover {
+	position: absolute;
+	opacity: 0;
+	transition: opacity .3s;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 11;
+	background: rgba(0,0,0,.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.showHover {
+	opacity: 1!important;
+}
+.opreateLayout {
+	border-bottom: 1px solid #f0f0f0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 1
+}
+.name {
+	text-align: center;
+	overflow: hidden;
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

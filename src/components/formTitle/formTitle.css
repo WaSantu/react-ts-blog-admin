@@ -1,0 +1,25 @@
+.form_title {
+	font-size: 17px;
+	font-weight: 700;
+	text-indent: 10px;
+	color: #666;
+	position: relative;
+	margin-bottom: 40px;
+	/* margin-bottom: ; */
+}
+
+.form_title::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 4px;
+	height: 14px;
+	background: #13C2C2;
+	top: 7px;
+}
+.subtitle {
+	font-size: 12px;
+	color: #999;
+	font-weight: normal;
+	margin-left: 10px;
+}
