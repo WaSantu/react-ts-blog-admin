@@ -35,9 +35,16 @@ const Editor: React.FC<Ieditor> = (props) => {
 	}
 	const doSelectImgs = (data:IimgSelect[]) => {
 		let mediaArr = data.map((item)=>{
-			return {
-				type:'IMAGE',
-				url:`http://localhost:3000${item.path}`
+			if(item.fileType){
+				return {
+					type:'VIDEO',
+					url:`http://localhost:3000${item.path}`
+				}
+			}else{
+				return {
+					type:'IMAGE',
+					url:`http://localhost:3000${item.path}`
+				}
 			}
 		})
 		setEditorState(ContentUtils.insertMedias(editorState,mediaArr))

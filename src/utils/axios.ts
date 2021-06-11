@@ -6,7 +6,7 @@ interface Idata {
 }
 const httpRequest = (url:string,data?:Idata,method?:string) => {
 	return new Promise<AxiosResponse>((resolve, reject) => {
-		let ttoken = window.localStorage['ttoken'] || window.sessionStorage['ttoken'] || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOnRydWUsIl9pZCI6IjYwYTRjMjJkMzBjNDZmMWRkYzM5OGExMiIsIm5hbWUiOiJzYW50dSIsInB3ZCI6IndlbnNoYW41MjAiLCJyb2xlIjoiYWRtaW4iLCJuaWNrbmFtZSI6InNhbnR1X25pY2tuYW1lIiwibWFpbCI6IjExMDIyMzQ2NDZAcXEuY29tIiwiY3JlYXRlZEF0IjoiMjAyMS0wNS0xOVQwNzo0NTo0OS43MjdaIiwidXBkYXRlZEF0IjoiMjAyMS0wNS0yOFQwNjozNzoxNS4xNDlaIiwiaWF0IjoxNjIzMzIzMDMzLCJleHAiOjE2MjMzNTE4MzN9.3Z3YTHL7z3QYOlOl6FEiV1zTvcYa99BpaAKUTWGaOqA'
+		let ttoken = window.localStorage['ttoken'] || window.sessionStorage['ttoken'] || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOnRydWUsIl9pZCI6IjYwYTRjMjJkMzBjNDZmMWRkYzM5OGExMiIsIm5hbWUiOiJzYW50dSIsInB3ZCI6IndlbnNoYW41MjAiLCJyb2xlIjoiYWRtaW4iLCJuaWNrbmFtZSI6InNhbnR1X25pY2tuYW1lIiwibWFpbCI6IjExMDIyMzQ2NDZAcXEuY29tIiwiY3JlYXRlZEF0IjoiMjAyMS0wNS0xOVQwNzo0NTo0OS43MjdaIiwidXBkYXRlZEF0IjoiMjAyMS0wNS0yOFQwNjozNzoxNS4xNDlaIiwiaWF0IjoxNjIzMzc4OTU2LCJleHAiOjE2MjM0MDc3NTZ9.rpn3a-01Hgalzdap3FPhSXBCImM23MBLjM2RVmCX8_0'
 		axios({
 			method:'post',
 			url:base+url,
@@ -25,7 +25,7 @@ const httpRequest = (url:string,data?:Idata,method?:string) => {
 
 const fileRequest = (url:string,file:File,data?:Idata) => {
 	return new Promise<AxiosResponse>((resolve, reject) => {
-		let ttoken = window.localStorage['ttoken'] || window.sessionStorage['ttoken'] || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOnRydWUsIl9pZCI6IjYwYTRjMjJkMzBjNDZmMWRkYzM5OGExMiIsIm5hbWUiOiJzYW50dSIsInB3ZCI6IndlbnNoYW41MjAiLCJyb2xlIjoiYWRtaW4iLCJuaWNrbmFtZSI6InNhbnR1X25pY2tuYW1lIiwibWFpbCI6IjExMDIyMzQ2NDZAcXEuY29tIiwiY3JlYXRlZEF0IjoiMjAyMS0wNS0xOVQwNzo0NTo0OS43MjdaIiwidXBkYXRlZEF0IjoiMjAyMS0wNS0yOFQwNjozNzoxNS4xNDlaIiwiaWF0IjoxNjIzMzIzMDMzLCJleHAiOjE2MjMzNTE4MzN9.3Z3YTHL7z3QYOlOl6FEiV1zTvcYa99BpaAKUTWGaOqA'
+		let ttoken = window.localStorage['ttoken'] || window.sessionStorage['ttoken'] || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOnRydWUsIl9pZCI6IjYwYTRjMjJkMzBjNDZmMWRkYzM5OGExMiIsIm5hbWUiOiJzYW50dSIsInB3ZCI6IndlbnNoYW41MjAiLCJyb2xlIjoiYWRtaW4iLCJuaWNrbmFtZSI6InNhbnR1X25pY2tuYW1lIiwibWFpbCI6IjExMDIyMzQ2NDZAcXEuY29tIiwiY3JlYXRlZEF0IjoiMjAyMS0wNS0xOVQwNzo0NTo0OS43MjdaIiwidXBkYXRlZEF0IjoiMjAyMS0wNS0yOFQwNjozNzoxNS4xNDlaIiwiaWF0IjoxNjIzMzc4OTU2LCJleHAiOjE2MjM0MDc3NTZ9.rpn3a-01Hgalzdap3FPhSXBCImM23MBLjM2RVmCX8_0'
 		let ddata = new FormData()
 		ddata.append('file',file)
 		if(data){
@@ -44,6 +44,7 @@ const fileRequest = (url:string,file:File,data?:Idata) => {
 			resolve(r)
 		}).catch(error=>{
 			message.error('请求错误')
+			reject(1)
 			return
 		})
 	})

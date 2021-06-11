@@ -34,7 +34,11 @@ const doGetFile = (data:IlistData) => httpRequest('/file/list',data)
  * @param file
  */
 const doUploadFile = (file:File) => fileRequest('/file/upload',file)
-
+/**
+ * @description 删除文件
+ * @param ids
+ */
+const doDeleteFile = (ids:string[]) => httpRequest('/file/delete',{ids})
 /**
  * @description 编辑新建文章
  * @param data
@@ -52,7 +56,14 @@ const doDeleteArtical = (ids:string[]) => httpRequest('/artical/delete',{ids})
  */
 const doGetArticalDetail = (id:string) => httpRequest('/artical/find',{id})
 
+/**
+ * @description 编辑新增分类
+ * @param data
+ */
 const doEditCategory = (data:IcommonData) => httpRequest('/category/edit',data)
+
+const doGetCategoryPapa = (id:string) => httpRequest('/category/findPapa',{id})
+
 export {
 	doGetArticalList,
 	doGetCategoryTree,
@@ -61,5 +72,7 @@ export {
 	doEditArtical,
 	doDeleteArtical,
 	doGetArticalDetail,
-	doEditCategory
+	doEditCategory,
+	doDeleteFile,
+	doGetCategoryPapa
 }

@@ -130,7 +130,7 @@ const ArticalDetail: React.FC<IRouteComponentProps> = (prop) => {
 					<Button size='large' type='primary' htmlType='submit'>提交</Button>
 				</Form.Item>
 			</Form>
-			<ImgPicker onClose={doCloseImg} onSelect={doSelectImgs} show={imgShow} multiple={true} />
+			<ImgPicker fileType={0} onClose={doCloseImg} onSelect={doSelectImgs} show={imgShow} multiple={true} />
 		</Spin>
 	</>
 };

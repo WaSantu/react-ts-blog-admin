@@ -26,7 +26,7 @@ const ImgPicker:React.FC<IimgProps> = (props) => {
 		}
 	},[props.show])
 	return <>
-		{unmountImg?(<ImgPickerContent onClose={handleClose} onSelect={handleSelect} multiple={props.multiple} show={imgShow}/>):null}
+		{unmountImg?(<ImgPickerContent fileType={props.fileType} onClose={handleClose} onSelect={handleSelect} multiple={props.multiple} show={imgShow}/>):null}
 		</>
 }
 
